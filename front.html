@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+	<html lang="en">
+		<head>
+			<title>Application</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+			<style>
+			body{
+			background-color: #FFFF99;
+			}
+			input{
+			max-width:500px;
+			}
+			</style>
+		</head>
+		<body>
+			<div class="container">
+			<div class="page-header">
+			<h2>Welcome</h2>
+			</div>
+			<div id="ack"><h4>Enter your details below.</h4>
+			</div>
+			<div id="x">
+			<form id="apply" action="back.php" method="post">
+				<div class="form-group">
+						<label for="text">First Name</label>
+						<input type="text" class="form-control" id="first" name="first_name">
+				</div>
+				<div class="form-group">
+						<label for="text">Last Name</label>
+						<input type="text" class="form-control" id="last" name="last_name">
+				</div>
+				<div class="form-group">
+						<label for="text">Email</label>
+						<input type="email" class="form-control" id="email" name="email">
+				</div>
+				<div class="form-group">
+				<label for="text"> Choose Your City</label>
+				<select id="city" name="city">
+						<option value="hyd">Hyderabad</option>
+						<option value="ban">Bangalore</option>
+						<option value="mum">Mumbai</option>
+				</select>
+				</div>
+				<div class="form-group">
+				Choose Your Products
+					<div class="checkbox">
+							<label><input type="checkbox" name="product[]" value="iphone">iPhone</label>
+					</div>
+					<div class="checkbox">
+							<label><input type="checkbox" name="product[]" value="lumia">Lumia</label>
+					</div>
+					<div class="checkbox">
+							<label><input type="checkbox" name="product[]" value="galaxy">Galaxy</label>
+					</div>
+				</div>
+				<button id="submit" class="btn btn-primary">Submit</button>
+				<br>
+				<br>
+			</form>
+			</div>
+
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+				<script type="text/javascript" src="send.js"></script>
+			</div>
+		</body>
+	
+	</html>

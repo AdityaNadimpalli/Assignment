@@ -1,0 +1,21 @@
+
+//create database
+
+CREATE DATABASE test;
+
+	CREATE TABLE test
+	(
+	id int NOT NULL AUTO_INCREMENT,
+	first_name varchar(30),
+	last_name varchar(30),
+	email varchar(30),
+	city varchar(30),
+	PRIMARY KEY (id)
+	);
+
+CREATE TABLE products
+(
+sno int,
+product varchar(30),
+FOREIGN KEY (sno) REFERENCES test(id)
+)

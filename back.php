@@ -13,28 +13,32 @@ $link = mysqli_connect("localhost", "root", "", "test");
 if($link === false){
    die("ERROR: Could not connect. " . mysqli_connect_error());
 }
-$sql = "INSERT INTO test (first_name,last_name,email,city) VALUES ('$x','$y','$w','$z')";
+$sql = "INSERT INTO test (first_name,last_name,email,city) values('$x','$y','$w','$z')";
+if(mysqli_query($link, $sql)){
+   //echo "Records added successfully.";
+
+} else{
+$flag=1;
+  // echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+
+}
+$sql3="SELECT id FROM test where first_name='$x' and last_name='$y' ";
+$result =$link->query($sql3);
+$row =  $result->fetch_assoc();
+$sno=$row['id'];
 
 //storing selected products into a different table "products"
 foreach($_POST['product'] as $arr){
-$sql2 = "INSERT INTO products (first_name,last_name,product) VALUES ('$x','$y','$arr')";
+$sql2 = "INSERT INTO products values('$sno','$arr')";
 if(mysqli_query($link, $sql2)){
 } else{
 $flag=1;
-break;
-    //echo "checkbox ERROR: Could not able to execute $sql2. " . mysqli_error($link);
+//break;
+//    echo "checkbox ERROR: Could not able to execute $sql2. " . mysqli_error($link);
 
 }
 }
 
-if(mysqli_query($link, $sql)){
-    //echo "Records added successfully.";
-
-} else{
-$flag=1;
-   // echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-
-}
 echo $flag;
 mysqli_close($link);
 }
